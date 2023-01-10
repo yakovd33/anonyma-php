@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Jan 10, 2023 at 03:48 PM
--- Server version: 5.7.31
--- PHP Version: 7.4.9
+-- Host: localhost:8889
+-- Generation Time: ינואר 10, 2023 בזמן 04:45 PM
+-- גרסת שרת: 5.7.34
+-- PHP Version: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,16 +24,15 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `consultations`
+-- מבנה טבלה עבור טבלה `consultations`
 --
 
-DROP TABLE IF EXISTS `consultations`;
-CREATE TABLE IF NOT EXISTS `consultations` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `consultations` (
+  `id` int(11) NOT NULL,
   `hash` varchar(99) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `title` varchar(200) NOT NULL,
-  `description` text NOT NULL,
+  `title` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `description` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `asker_hash` varchar(99) NOT NULL,
   `is_public` tinyint(1) NOT NULL,
   `is_infinite_answer` tinyint(1) NOT NULL DEFAULT '1',
@@ -43,38 +42,34 @@ CREATE TABLE IF NOT EXISTS `consultations` (
   `anonymous_nickname` varchar(26) NOT NULL,
   `image_hash` varchar(32) DEFAULT NULL,
   `upvotes` int(11) NOT NULL DEFAULT '0',
-  `downvotes` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `hash` (`hash`)
-) ENGINE=MyISAM AUTO_INCREMENT=152 DEFAULT CHARSET=latin1;
+  `downvotes` int(11) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `consultations`
+-- הוצאת מידע עבור טבלה `consultations`
 --
 
 INSERT INTO `consultations` (`id`, `hash`, `date`, `title`, `description`, `asker_hash`, `is_public`, `is_infinite_answer`, `max_answers`, `is_locked`, `is_anonymous`, `anonymous_nickname`, `image_hash`, `upvotes`, `downvotes`) VALUES
-(147, 'c27cf21e0e59013a144b793c69e3c9f4', '2017-07-19 07:55:22', '×©××œ×” ×œ×“×•×’×ž×', '×”×™×™ (:', '8155bc545f84d9652f1012ef2bdfb6eb', 1, 1, 1, 0, 0, '×× ×•× ×™×ž×™', 'a6bfb9ce92f9c4dc7568b258d1d0daa1', 0, 0),
-(148, '2cdfc0b243876a404fc92f4cff212db1', '2017-07-19 07:55:59', '×©××œ×” ×ž×¡ 2', '×ª×™××•×¨ ×”×©××œ×”', '8155bc545f84d9652f1012ef2bdfb6eb', 1, 1, 1, 0, 0, '×× ×•× ×™×ž×™', '3e98b42ad96ab457fdc7ee41381383ae', 0, 0),
-(149, '0d5821c6a0b617771beeccc75a8c75a2', '2017-07-19 07:56:28', '×–××ª ×©××œ×” 3', '×ª×™××•×¨ ×©××œ×” ×ž×¡ 3', '8155bc545f84d9652f1012ef2bdfb6eb', 1, 1, 1, 0, 0, '×× ×•× ×™×ž×™', 'be855e2303d7955f719e6e62fcdcbb18', 0, 0),
-(150, '45f24f0d985bc54bc8279697c5d06a1e', '2017-07-19 07:57:16', '×–××ª ×©××œ×” ×ž×¡ 4', '×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨ ×ª×™××•×¨', '8155bc545f84d9652f1012ef2bdfb6eb', 1, 1, 1, 0, 0, '×× ×•× ×™×ž×™', '51b529666cd201db7fe35927ea8b6b32', 1, 0),
-(151, '801de16a9e6e1d69006e399718102a2e', '2017-07-19 07:59:36', '×©××œ×” ×ž×¡ 5', '×•×¨× ××™×¤×¡×•× ×“×•×œ×•×¨ ×¡×™×˜ ××ž×˜, ×§×•× ×¡×§×˜×•×¨×¨ ××“×™×¤×™×¡×™× ×’ ××œ×™×ª ×’×•×œ×¨ ×ž×•× ×¤×¨×¨ ×¡×•×‘×¨×˜ ×œ×•×¨× ×©×‘×¦×§ ×™×”×•×œ, ×œ×›× ×•×¥ ×‘×¢×¨×™×¨ ×’×§ ×œ×™×¥, ×•×©×‘×¢×’×˜ ×œ×™×‘× ×¡×•×œ×’×§. ×‘×¨××™×˜ ×•×œ×—×ª ×¦×•×¨×§ ×ž×•× ×—×£, ×‘×’×•×¨×ž×™ ×ž×’×ž×©. ×ª×¨×‘× ×š ×•×¡×ª×¢×“ ×œ×›× ×• ×¡×ª×©× ×”×©×ž×” - ×œ×ª×›×™ ×ž×•×¨×’× ×‘×•×¨×§? ×œ×ª×™×’ ×™×©×‘×¢×¡.\r\n\r\n×œ×•×¨× ××™×¤×¡×•× ×“×•×œ×•×¨ ×¡×™×˜ ××ž×˜, ×§×•× ×¡×§×˜×•×¨×¨ ××“×™×¤×™×¡×™× ×’ ××œ×™×ª. ×¡×ª ××œ×ž× ×§×•× × ×™×¡×™ × ×•×Ÿ × ×™×‘××”. ×“×¡ ××™××§×•×œ×™×¡ ×•×•×œ×•×¤×˜×” ×“×™××. ×•×¡×˜×™×‘×•×œ×•× ××˜ ×“×•×œ×•×¨, ×§×¨××¡ ××’×ª ×œ×§×˜×•×¡ ×•×•××œ ×××•×’×• ×•×¡×˜×™×‘×•×œ×•× ×¡×•×œ×™×¡×™ ×˜×™×“×•× ×‘×¢×œ×™×§. × ×•×œ×•× ××¨×•×•×¡ ×¡××¤×™××Ÿ - ×¤×•×¡×™×œ×™×¡ ×§×•×•×™×¡, ××§×•×•×–×ž×Ÿ ×§×•×•××–×™ ×‘×ž×¨ ×ž×•×“×•×£. ××•×“×™×¤×• ×‘×œ××¡×˜×™×§ ×ž×•× ×•×¤×¥ ×§×œ×™×¨, ×‘× ×¤×ª × ×¤×§×˜ ×œ×ž×¡×•×Ÿ ×‘×œ×¨×§ - ×•×¢× ×•×£ ×’×•×œ×¨ ×ž×•× ×¤×¨×¨ ×¡×•×‘×¨×˜ ×œ×•×¨× ×©×‘×¦×§ ×™×”×•×œ, ×œ×›× ×•×¥ ×‘×¢×¨×™×¨ ×’×§ ×œ×™×¥, ×¦×© ×‘×œ×™×, ×ž× ×¡×•×˜×• ×¦×ž×œ×— ×œ×‘×™×§×• × × ×‘×™, ×¦×ž×•×§×• ×‘×œ×•×§×¨×™×” ×©×™×¦×ž×” ×‘×¨×•×¨×§. ×§×•×œ×•×¨×¡ ×ž×•× ×¤×¨×“ ××“× ×“×•× ×¡×™×œ×§×•×£, ×ž×¨×’×©×™ ×•×ž×¨×’×©×—. ×¢×ž×—×œ×™×£ ×”×•×¢× ×™×‘ ×”×™×•×©×‘×‘ ×©×¢×¨×© ×©×ž×—×•×™×˜ - ×©×œ×•×©×¢ ×•×ª×œ×‘×¨×• ×—×©×œ×• ×©×¢×•×ª×œ×©×š ×•×—××™×ª × ×•×‘×© ×¢×¨×©×©×£. ×–×•×ª×” ×ž× ×§ ×”×‘×§×™×¥ ××¤××— ×“×œ××ž×ª ×™×‘×©, ×›×× ×” × ×™×¦××—×• × ×ž×¨×’×™ ×©×”×›×™× ×ª×•×§, ×”×“×© ×©× ×¨× ×”×ª×™×“× ×”×›×™×™×¨ ×•×§.', '8155bc545f84d9652f1012ef2bdfb6eb', 1, 1, 1, 0, 0, '×× ×•× ×™×ž×™', 'a945fd0e741888bfaed8b4d69f09eb5b', 0, 0);
+(147, 'c27cf21e0e59013a144b793c69e3c9f4', '2017-07-19 07:55:22', 'שאלה לדוגמא', 'היי (:', '8155bc545f84d9652f1012ef2bdfb6eb', 1, 1, 1, 0, 0, '×× ×•× ×™×ž×™', 'a6bfb9ce92f9c4dc7568b258d1d0daa1', 0, 0),
+(148, '2cdfc0b243876a404fc92f4cff212db1', '2017-07-19 07:55:59', 'שאלה מס 2', 'תיאור השאלה', '8155bc545f84d9652f1012ef2bdfb6eb', 1, 1, 1, 0, 0, '×× ×•× ×™×ž×™', '3e98b42ad96ab457fdc7ee41381383ae', 0, 0),
+(149, '0d5821c6a0b617771beeccc75a8c75a2', '2017-07-19 07:56:28', 'זאת שאלה 3', 'תיאור שאלה מס 3', '8155bc545f84d9652f1012ef2bdfb6eb', 1, 1, 1, 0, 0, '×× ×•× ×™×ž×™', 'be855e2303d7955f719e6e62fcdcbb18', 0, 0),
+(150, '45f24f0d985bc54bc8279697c5d06a1e', '2017-07-19 07:57:16', 'זאת שאלה מס 4', 'תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור תיאור', '8155bc545f84d9652f1012ef2bdfb6eb', 1, 1, 1, 0, 0, '×× ×•× ×™×ž×™', '51b529666cd201db7fe35927ea8b6b32', 1, 0),
+(151, '801de16a9e6e1d69006e399718102a2e', '2017-07-19 07:59:36', 'שאלה מס 5', 'ורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית גולר מונפרר סוברט לורם שבצק יהול, לכנוץ בעריר גק ליץ, ושבעגט ליבם סולגק. בראיט ולחת צורק מונחף, בגורמי מגמש. תרבנך וסתעד לכנו סתשם השמה - לתכי מורגם בורק? לתיג ישבעס.\r\n\r\nלורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק. נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן קוואזי במר מודוף. אודיפו בלאסטיק מונופץ קליר, בנפת נפקט למסון בלרק - וענוף גולר מונפרר סוברט לורם שבצק יהול, לכנוץ בעריר גק ליץ, צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. קולורס מונפרד אדנדום סילקוף, מרגשי ומרגשח. עמחליף הועניב היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש ערששף. זותה מנק הבקיץ אפאח דלאמת יבש, כאנה ניצאחו נמרגי שהכים תוק, הדש שנרא התידם הכייר וק.', '8155bc545f84d9652f1012ef2bdfb6eb', 1, 1, 1, 0, 0, '×× ×•× ×™×ž×™', 'a945fd0e741888bfaed8b4d69f09eb5b', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `consultations_tags`
+-- מבנה טבלה עבור טבלה `consultations_tags`
 --
 
-DROP TABLE IF EXISTS `consultations_tags`;
-CREATE TABLE IF NOT EXISTS `consultations_tags` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `consultations_tags` (
+  `id` int(11) NOT NULL,
   `consultation_hash` varchar(99) NOT NULL,
-  `tag_hash` varchar(32) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+  `tag_hash` varchar(32) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `consultations_tags`
+-- הוצאת מידע עבור טבלה `consultations_tags`
 --
 
 INSERT INTO `consultations_tags` (`id`, `consultation_hash`, `tag_hash`) VALUES
@@ -96,21 +91,19 @@ INSERT INTO `consultations_tags` (`id`, `consultation_hash`, `tag_hash`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `consultations_votes`
+-- מבנה טבלה עבור טבלה `consultations_votes`
 --
 
-DROP TABLE IF EXISTS `consultations_votes`;
-CREATE TABLE IF NOT EXISTS `consultations_votes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `consultations_votes` (
+  `id` int(11) NOT NULL,
   `hash` varchar(32) NOT NULL,
   `consultation_hash` varchar(32) NOT NULL,
   `voter_hash` varchar(32) NOT NULL,
-  `vote` varchar(99) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=106 DEFAULT CHARSET=latin1;
+  `vote` varchar(99) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `consultations_votes`
+-- הוצאת מידע עבור טבלה `consultations_votes`
 --
 
 INSERT INTO `consultations_votes` (`id`, `hash`, `consultation_hash`, `voter_hash`, `vote`) VALUES
@@ -131,14 +124,13 @@ INSERT INTO `consultations_votes` (`id`, `hash`, `consultation_hash`, `voter_has
 -- --------------------------------------------------------
 
 --
--- Table structure for table `guests_chats`
+-- מבנה טבלה עבור טבלה `guests_chats`
 --
 
-DROP TABLE IF EXISTS `guests_chats`;
-CREATE TABLE IF NOT EXISTS `guests_chats` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `guests_chats` (
+  `id` int(11) NOT NULL,
   `hash` varchar(99) NOT NULL,
-  `created_time` timestamp NOT NULL,
+  `created_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `user_one_hash` varchar(99) DEFAULT '',
   `user_two_hash` varchar(99) NOT NULL DEFAULT '',
   `user_one_nickname` varchar(30) NOT NULL DEFAULT '',
@@ -149,80 +141,78 @@ CREATE TABLE IF NOT EXISTS `guests_chats` (
   `is_taken` tinyint(1) NOT NULL DEFAULT '0',
   `is_aborted` tinyint(1) NOT NULL DEFAULT '0',
   `user_one_last_message_check` datetime DEFAULT NULL,
-  `user_two_last_message_check` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=117 DEFAULT CHARSET=latin1;
+  `user_two_last_message_check` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `guests_chats`
+-- הוצאת מידע עבור טבלה `guests_chats`
 --
 
 INSERT INTO `guests_chats` (`id`, `hash`, `created_time`, `user_one_hash`, `user_two_hash`, `user_one_nickname`, `user_two_nickname`, `user_one_icon`, `user_two_icon`, `is_disconnected`, `is_taken`, `is_aborted`, `user_one_last_message_check`, `user_two_last_message_check`) VALUES
-(116, 'e8ceb4478a8ea88ffcb2f973fd4fe255', '2018-08-16 15:30:39', 'f0ca907c7701c576a0623c8bd39c1f67', '', '×©×“×’×©×“', '', 'heart', '', 0, 0, 0, '2018-08-16 18:30:39', NULL);
+(123, 'c484613026fc934c8c0f58630e2710ef', '2023-01-10 16:44:07', '5f9664162309923ca557af5959aaea18', 'a36e238217655b1465ea7bf2866a9007', 'undefined', 'undefined', 'undefined', 'undefined', 0, 1, 0, '2023-01-10 18:44:07', '2023-01-10 18:43:42'),
+(122, '51fcfaf99b362af7697131f4247df016', '2023-01-10 16:40:44', 'a36e238217655b1465ea7bf2866a9007', '5f9664162309923ca557af5959aaea18', 'undefined', 'undefined', 'undefined', 'undefined', 0, 1, 0, '2023-01-10 18:40:43', '2023-01-10 18:40:44');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `guests_chat_messages`
+-- מבנה טבלה עבור טבלה `guests_chat_messages`
 --
 
-DROP TABLE IF EXISTS `guests_chat_messages`;
-CREATE TABLE IF NOT EXISTS `guests_chat_messages` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `guests_chat_messages` (
+  `id` int(11) NOT NULL,
   `chat_hash` varchar(99) NOT NULL,
   `from_hash` varchar(99) NOT NULL,
   `type` varchar(99) NOT NULL,
   `photo_hash` varchar(32) DEFAULT NULL,
-  `message` text,
-  `sent_date` timestamp NOT NULL,
-  `is_read` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=300 DEFAULT CHARSET=latin1;
+  `message` text CHARACTER SET utf8 COLLATE utf8_bin,
+  `sent_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `is_read` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `guests_chat_messages`
+-- הוצאת מידע עבור טבלה `guests_chat_messages`
 --
 
 INSERT INTO `guests_chat_messages` (`id`, `chat_hash`, `from_hash`, `type`, `photo_hash`, `message`, `sent_date`, `is_read`) VALUES
-(293, '3809881de84823654a1613e2d419a988', 'ddf44ff62083145e1c47d44a3b33e767', 'text', NULL, '× × ×›×ž×¦×’×—×’', '2017-06-17 11:14:28', 0),
-(292, '3809881de84823654a1613e2d419a988', 'ddf44ff62083145e1c47d44a3b33e767', 'text', NULL, '×›×™×”×™×™×›×—×›', '2017-06-17 11:14:22', 0),
-(291, '3809881de84823654a1613e2d419a988', 'ddf44ff62083145e1c47d44a3b33e767', 'text', NULL, '××’×—×’×—', '2017-06-17 11:14:15', 0),
-(290, '3809881de84823654a1613e2d419a988', 'ddf44ff62083145e1c47d44a3b33e767', 'text', NULL, '×”×—×›×—×›', '2017-06-17 11:14:13', 0),
-(289, '3809881de84823654a1613e2d419a988', 'ddf44ff62083145e1c47d44a3b33e767', 'text', NULL, '××Ÿ××—××ª×›', '2017-06-17 11:14:12', 0),
-(288, '3809881de84823654a1613e2d419a988', 'ddf44ff62083145e1c47d44a3b33e767', 'text', NULL, '×’×™×’×™×—×›××œ', '2017-06-17 11:14:11', 0),
-(287, '3809881de84823654a1613e2d419a988', 'ddf44ff62083145e1c47d44a3b33e767', 'text', NULL, '×’×¦×—×—×›×—×œ×›×œ×¨', '2017-06-17 11:14:09', 0),
-(286, '3809881de84823654a1613e2d419a988', 'ddf44ff62083145e1c47d44a3b33e767', 'text', NULL, '×ž×ž×›×¦×œ×›×”', '2017-06-17 11:13:49', 0),
-(285, '1214659ef0fb9718a9ffb03ef19cb383', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, '×ª×•×›×Ÿ ×”×”×•×“×¢×”...', '2017-06-17 10:23:53', 0),
+(293, '3809881de84823654a1613e2d419a988', 'ddf44ff62083145e1c47d44a3b33e767', 'text', NULL, 'ננכמצגחג', '2017-06-17 11:14:28', 0),
+(292, '3809881de84823654a1613e2d419a988', 'ddf44ff62083145e1c47d44a3b33e767', 'text', NULL, 'כיהייכחכ', '2017-06-17 11:14:22', 0),
+(291, '3809881de84823654a1613e2d419a988', 'ddf44ff62083145e1c47d44a3b33e767', 'text', NULL, 'םגחגח', '2017-06-17 11:14:15', 0),
+(290, '3809881de84823654a1613e2d419a988', 'ddf44ff62083145e1c47d44a3b33e767', 'text', NULL, 'החכחכ', '2017-06-17 11:14:13', 0),
+(289, '3809881de84823654a1613e2d419a988', 'ddf44ff62083145e1c47d44a3b33e767', 'text', NULL, 'אןאחאתכ', '2017-06-17 11:14:12', 0),
+(288, '3809881de84823654a1613e2d419a988', 'ddf44ff62083145e1c47d44a3b33e767', 'text', NULL, 'גיגיחכאל', '2017-06-17 11:14:11', 0),
+(287, '3809881de84823654a1613e2d419a988', 'ddf44ff62083145e1c47d44a3b33e767', 'text', NULL, 'גצחחכחלכלר', '2017-06-17 11:14:09', 0),
+(286, '3809881de84823654a1613e2d419a988', 'ddf44ff62083145e1c47d44a3b33e767', 'text', NULL, 'ממכצלכה', '2017-06-17 11:13:49', 0),
+(285, '1214659ef0fb9718a9ffb03ef19cb383', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, 'תוכן ההודעה...', '2017-06-17 10:23:53', 0),
 (284, '1214659ef0fb9718a9ffb03ef19cb383', '7c2712f600b136fbd4dfd6f963220825', 'photo', '9af9e6f2ea3250a8d87815d64a051327', NULL, '2017-06-17 10:23:48', 0),
-(283, 'a2dcbaed8a47dc39ddd1278d1e9a0026', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, '×”×©×¤×›×ª×™', '2017-06-17 10:14:46', 0),
-(282, 'a2dcbaed8a47dc39ddd1278d1e9a0026', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, '××ž×ž×ž', '2017-06-17 10:14:41', 0),
+(283, 'a2dcbaed8a47dc39ddd1278d1e9a0026', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, 'השפכתי', '2017-06-17 10:14:46', 0),
+(282, 'a2dcbaed8a47dc39ddd1278d1e9a0026', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, 'אמממ', '2017-06-17 10:14:41', 0),
 (281, 'a2dcbaed8a47dc39ddd1278d1e9a0026', 'fb475c959501e63ba53601034ffb2d4a', 'photo', '56e456e1471aaf10491ee9a418e2f66c', NULL, '2017-06-17 10:14:11', 0),
 (280, 'a2dcbaed8a47dc39ddd1278d1e9a0026', 'fb475c959501e63ba53601034ffb2d4a', 'photo', 'ddceb6da861ca375ffc2abcfb384bfae', NULL, '2017-06-17 10:13:33', 0),
-(279, 'a2dcbaed8a47dc39ddd1278d1e9a0026', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, '×™×© ×œ×™ ×©×“×™×™× ×›×ž×• ×©×œ ×¨×‘×§×”', '2017-06-17 10:13:32', 0),
-(278, 'a2dcbaed8a47dc39ddd1278d1e9a0026', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, '×”×–×™×Ÿ ×©×œ×™ ×¨×•×¤×¡', '2017-06-17 10:13:14', 0),
-(277, 'a2dcbaed8a47dc39ddd1278d1e9a0026', 'fb475c959501e63ba53601034ffb2d4a', 'text', NULL, '×—×™×™×‘ ×œ×”×•×“×•×ª', '2017-06-17 10:12:44', 0),
-(276, 'a2dcbaed8a47dc39ddd1278d1e9a0026', 'fb475c959501e63ba53601034ffb2d4a', 'text', NULL, '×ž×¤×ª×” ×‘×™×•×ª×¨', '2017-06-17 10:12:33', 0),
-(275, 'a2dcbaed8a47dc39ddd1278d1e9a0026', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, '××ž×ž ×œ×œ×§×§ ××•×ª×š', '2017-06-17 10:12:28', 0),
-(274, 'a2dcbaed8a47dc39ddd1278d1e9a0026', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, '×× ×™ ××•×”×‘ ×œ×§×¨×“×”', '2017-06-17 10:12:18', 0),
+(279, 'a2dcbaed8a47dc39ddd1278d1e9a0026', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, 'יש לי שדיים כמו של רבקה', '2017-06-17 10:13:32', 0),
+(278, 'a2dcbaed8a47dc39ddd1278d1e9a0026', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, 'הזין שלי רופס', '2017-06-17 10:13:14', 0),
+(277, 'a2dcbaed8a47dc39ddd1278d1e9a0026', 'fb475c959501e63ba53601034ffb2d4a', 'text', NULL, 'חייב להודות', '2017-06-17 10:12:44', 0),
+(276, 'a2dcbaed8a47dc39ddd1278d1e9a0026', 'fb475c959501e63ba53601034ffb2d4a', 'text', NULL, 'מפתה ביותר', '2017-06-17 10:12:33', 0),
+(275, 'a2dcbaed8a47dc39ddd1278d1e9a0026', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, 'אממ ללקק אותך', '2017-06-17 10:12:28', 0),
+(274, 'a2dcbaed8a47dc39ddd1278d1e9a0026', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, 'אני אוהב לקרדה', '2017-06-17 10:12:18', 0),
 (273, 'a2dcbaed8a47dc39ddd1278d1e9a0026', 'fb475c959501e63ba53601034ffb2d4a', 'photo', '147538562d7bb7b1b976e01b70145cf8', NULL, '2017-06-17 10:12:11', 0),
-(272, 'a2dcbaed8a47dc39ddd1278d1e9a0026', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, '×™×© ×œ×™ ×–×™×Ÿ ×’×“×•×œ', '2017-06-17 10:12:09', 0),
-(271, 'a2dcbaed8a47dc39ddd1278d1e9a0026', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, '×× ×™ ×§×˜×™×Ÿ', '2017-06-17 10:12:02', 0),
-(270, '566f6710c7ded8479015f68c26abfd0e', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, '×ž×” ×©×œ×•×ž×š?', '2017-06-16 18:09:36', 0),
-(269, '566f6710c7ded8479015f68c26abfd0e', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, '×ª×•×“×” ××—×™', '2017-06-16 18:09:34', 0),
-(268, '566f6710c7ded8479015f68c26abfd0e', '3f6158d1105ed88cd127125aa5684724', 'text', NULL, '×—×ž×•×“×“×“×“', '2017-06-16 18:09:24', 0),
+(272, 'a2dcbaed8a47dc39ddd1278d1e9a0026', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, 'יש לי זין גדול', '2017-06-17 10:12:09', 0),
+(271, 'a2dcbaed8a47dc39ddd1278d1e9a0026', '3a9bd1e2b3257a452b5fff8c1bb3d119', 'text', NULL, 'אני קטין', '2017-06-17 10:12:02', 0),
+(270, '566f6710c7ded8479015f68c26abfd0e', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, 'מה שלומך?', '2017-06-16 18:09:36', 0),
+(269, '566f6710c7ded8479015f68c26abfd0e', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, 'תודה אחי', '2017-06-16 18:09:34', 0),
+(268, '566f6710c7ded8479015f68c26abfd0e', '3f6158d1105ed88cd127125aa5684724', 'text', NULL, 'חמודדדד', '2017-06-16 18:09:24', 0),
 (267, '566f6710c7ded8479015f68c26abfd0e', '57299b7f3d9464c8f5aff54d4c043a76', 'photo', '55ef2bbcaee3ccd5cfb76bd437bbad8c', NULL, '2017-06-16 18:09:21', 0),
-(266, 'cbeee42d9cb2d8a0f41904e3123ee75c', '5769eeb5b5da53314d4ed2d5694306e6', 'text', NULL, '×ª×•×“×” ××— ×©×œ×™', '2017-06-16 18:08:47', 0),
-(265, 'cbeee42d9cb2d8a0f41904e3123ee75c', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, '× ××¦×™ ×ž× ×™××§', '2017-06-16 18:06:44', 0),
-(264, 'cbeee42d9cb2d8a0f41904e3123ee75c', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, '×—×¨× ×¢×œ×™×™×š', '2017-06-16 18:06:40', 0),
-(263, '608bbf28c44588d234c09b2f11ba2f62', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, '×”×™×™×™×™', '2017-06-16 18:05:28', 0),
-(262, '00a06eba8f346fd01e78efce042fb07a', '5769eeb5b5da53314d4ed2d5694306e6', 'text', NULL, '×§×§×™ ×‘×˜×•×¡×™×§', '2017-06-16 18:04:49', 0),
-(261, '00a06eba8f346fd01e78efce042fb07a', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, '×™××ž×™', '2017-06-16 18:04:41', 0),
+(266, 'cbeee42d9cb2d8a0f41904e3123ee75c', '5769eeb5b5da53314d4ed2d5694306e6', 'text', NULL, 'תודה אח שלי', '2017-06-16 18:08:47', 0),
+(265, 'cbeee42d9cb2d8a0f41904e3123ee75c', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, 'נאצי מניאק', '2017-06-16 18:06:44', 0),
+(264, 'cbeee42d9cb2d8a0f41904e3123ee75c', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, 'חרא עלייך', '2017-06-16 18:06:40', 0),
+(263, '608bbf28c44588d234c09b2f11ba2f62', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, 'היייי', '2017-06-16 18:05:28', 0),
+(262, '00a06eba8f346fd01e78efce042fb07a', '5769eeb5b5da53314d4ed2d5694306e6', 'text', NULL, 'קקי בטוסיק', '2017-06-16 18:04:49', 0),
+(261, '00a06eba8f346fd01e78efce042fb07a', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, 'יאמי', '2017-06-16 18:04:41', 0),
 (260, '00a06eba8f346fd01e78efce042fb07a', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, 'NV', '2017-06-16 17:58:04', 0),
-(259, '00a06eba8f346fd01e78efce042fb07a', '5769eeb5b5da53314d4ed2d5694306e6', 'text', NULL, '×§×•×¨×” ××—×™', '2017-06-16 17:52:31', 0),
-(258, '00a06eba8f346fd01e78efce042fb07a', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, '×ž×”×”×”', '2017-06-16 17:52:27', 0),
-(257, '00a06eba8f346fd01e78efce042fb07a', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, '×©×©×ª×¢×¢×¢×§', '2017-06-16 17:49:51', 0),
-(256, '00a06eba8f346fd01e78efce042fb07a', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, '×ž×”×”×”×”', '2017-06-16 17:49:42', 0),
-(255, '9e372a2bddbf2b75c8ba940e22d3ed10', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, '×”×™×™', '2017-06-16 17:38:14', 0),
+(259, '00a06eba8f346fd01e78efce042fb07a', '5769eeb5b5da53314d4ed2d5694306e6', 'text', NULL, 'קורה אחי', '2017-06-16 17:52:31', 0),
+(258, '00a06eba8f346fd01e78efce042fb07a', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, 'מההה', '2017-06-16 17:52:27', 0),
+(257, '00a06eba8f346fd01e78efce042fb07a', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, 'ששתעעעק', '2017-06-16 17:49:51', 0),
+(256, '00a06eba8f346fd01e78efce042fb07a', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, 'מהההה', '2017-06-16 17:49:42', 0),
+(255, '9e372a2bddbf2b75c8ba940e22d3ed10', '57299b7f3d9464c8f5aff54d4c043a76', 'text', NULL, 'היי', '2017-06-16 17:38:14', 0),
 (254, 'b400944e0547e900600bc213154b14e5', '97cf7e62e5ad7a2c8e4718107be134d7', 'photo', 'f8e3387122277924d0c3afb22ea40ae7', NULL, '2017-06-10 09:10:06', 0),
 (253, 'b400944e0547e900600bc213154b14e5', '97cf7e62e5ad7a2c8e4718107be134d7', 'photo', '36da34dfdd3ba2a7d9f30840b58c513f', NULL, '2017-06-10 09:09:48', 0),
 (252, 'b400944e0547e900600bc213154b14e5', '97cf7e62e5ad7a2c8e4718107be134d7', 'photo', 'f0dd7122419eb3d81791a26778d3d036', NULL, '2017-06-10 09:09:36', 0),
@@ -234,33 +224,36 @@ INSERT INTO `guests_chat_messages` (`id`, `chat_hash`, `from_hash`, `type`, `pho
 (247, 'b400944e0547e900600bc213154b14e5', '97cf7e62e5ad7a2c8e4718107be134d7', 'photo', NULL, NULL, '2017-06-10 09:03:33', 0),
 (245, 'b400944e0547e900600bc213154b14e5', '80ea64774408954956bf82f20a642db7', 'photo', NULL, NULL, '2017-06-10 09:02:04', 0),
 (244, 'b400944e0547e900600bc213154b14e5', '97cf7e62e5ad7a2c8e4718107be134d7', 'photo', NULL, NULL, '2017-06-10 09:01:43', 0),
-(243, 'b400944e0547e900600bc213154b14e5', '80ea64774408954956bf82f20a642db7', 'text', NULL, '×©×ª×•×§ ×™×”×•×ž×•<br>', '2017-06-10 09:01:11', 0),
-(242, 'b400944e0547e900600bc213154b14e5', '97cf7e62e5ad7a2c8e4718107be134d7', 'text', NULL, '×ž×” ×§×•×¨×”?', '2017-06-10 09:01:04', 0),
-(294, 'df21f2f11c945fb036dea83e9d7941d8', '4ddfe62315f9afe60d2df298f88550e3', 'text', NULL, '×”×™×™ (:', '2017-07-19 08:11:21', 0),
-(295, 'df21f2f11c945fb036dea83e9d7941d8', '197a1b4516f39ef8b88ef3fc37037b98', 'text', NULL, '×©×œ×•× (:', '2017-07-19 08:11:31', 0),
+(243, 'b400944e0547e900600bc213154b14e5', '80ea64774408954956bf82f20a642db7', 'text', NULL, 'שתוק יהומו<br>', '2017-06-10 09:01:11', 0),
+(242, 'b400944e0547e900600bc213154b14e5', '97cf7e62e5ad7a2c8e4718107be134d7', 'text', NULL, 'מה קורה?', '2017-06-10 09:01:04', 0),
+(294, 'df21f2f11c945fb036dea83e9d7941d8', '4ddfe62315f9afe60d2df298f88550e3', 'text', NULL, 'היי (:', '2017-07-19 08:11:21', 0),
+(295, 'df21f2f11c945fb036dea83e9d7941d8', '197a1b4516f39ef8b88ef3fc37037b98', 'text', NULL, 'שלום (:', '2017-07-19 08:11:31', 0),
 (296, 'df21f2f11c945fb036dea83e9d7941d8', '4ddfe62315f9afe60d2df298f88550e3', 'photo', '92a7e3927fcc8a37a9c08629ad4c3fe3', NULL, '2017-07-19 08:12:58', 0),
-(297, 'df21f2f11c945fb036dea83e9d7941d8', '197a1b4516f39ef8b88ef3fc37037b98', 'text', NULL, '×—×—×—×—×—', '2017-07-19 08:13:07', 0),
-(298, 'e968620016ca006e0fb1519740337e0b', '774d9a76aeeae93e44b704db1530d744', 'text', NULL, '×‘×“×™×§×”×”', '2018-01-13 16:22:42', 0),
-(299, 'e968620016ca006e0fb1519740337e0b', '3243a6a3cade1aa0c728cc28b7db1d88', 'text', NULL, '×ª×•×“×”', '2018-01-13 16:22:47', 0);
+(297, 'df21f2f11c945fb036dea83e9d7941d8', '197a1b4516f39ef8b88ef3fc37037b98', 'text', NULL, 'חחחחח', '2017-07-19 08:13:07', 0),
+(298, 'e968620016ca006e0fb1519740337e0b', '774d9a76aeeae93e44b704db1530d744', 'text', NULL, 'בדיקהה', '2018-01-13 16:22:42', 0),
+(299, 'e968620016ca006e0fb1519740337e0b', '3243a6a3cade1aa0c728cc28b7db1d88', 'text', NULL, 'תודה', '2018-01-13 16:22:47', 0),
+(300, 'c484613026fc934c8c0f58630e2710ef', 'a36e238217655b1465ea7bf2866a9007', 'text', NULL, 'היי', '2023-01-10 16:43:21', 0),
+(301, 'c484613026fc934c8c0f58630e2710ef', '5f9664162309923ca557af5959aaea18', 'text', NULL, 'מה הולך?', '2023-01-10 16:43:33', 0),
+(302, 'c484613026fc934c8c0f58630e2710ef', '5f9664162309923ca557af5959aaea18', 'text', NULL, 'זכור לי שהיה פעם צליל', '2023-01-10 16:43:38', 0),
+(303, 'c484613026fc934c8c0f58630e2710ef', 'a36e238217655b1465ea7bf2866a9007', 'text', NULL, 'כן', '2023-01-10 16:43:48', 0),
+(304, 'c484613026fc934c8c0f58630e2710ef', 'a36e238217655b1465ea7bf2866a9007', 'photo', '7437196f94b48dacec2ba8e58962a1a4', NULL, '2023-01-10 16:44:01', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `photos`
+-- מבנה טבלה עבור טבלה `photos`
 --
 
-DROP TABLE IF EXISTS `photos`;
-CREATE TABLE IF NOT EXISTS `photos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `photos` (
+  `id` int(11) NOT NULL,
   `path` text NOT NULL,
   `type` varchar(99) NOT NULL,
-  `date` timestamp NOT NULL,
-  `hash` varchar(99) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=129 DEFAULT CHARSET=latin1;
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `hash` varchar(99) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `photos`
+-- הוצאת מידע עבור טבלה `photos`
 --
 
 INSERT INTO `photos` (`id`, `path`, `type`, `date`, `hash`) VALUES
@@ -284,34 +277,33 @@ INSERT INTO `photos` (`id`, `path`, `type`, `date`, `hash`) VALUES
 (111, 'media/consultations-ans-photos/9480ae00900b5e49547c2d6d322b3ae3.jpg', 'image', '2017-06-10 09:27:08', 'a428074f96600144e963b5456696f5b5'),
 (110, 'media/guest_chat_images/e2558f44c209718d9c2b1f8fef7f4ed8.jpg', 'image', '2017-06-10 09:10:06', 'f8e3387122277924d0c3afb22ea40ae7'),
 (109, 'media/guest_chat_images/c11fe132a1a65aad1d065f70f5b80bf8.jpg', 'image', '2017-06-10 09:09:48', '36da34dfdd3ba2a7d9f30840b58c513f'),
-(108, 'media/guest_chat_images/63d0144b7513b896197c2203e302c386.jpg', 'image', '2017-06-10 09:09:36', 'f0dd7122419eb3d81791a26778d3d036');
+(108, 'media/guest_chat_images/63d0144b7513b896197c2203e302c386.jpg', 'image', '2017-06-10 09:09:36', 'f0dd7122419eb3d81791a26778d3d036'),
+(129, 'media/guest_chat_images/8c9b697a594724ef76ef6ff87fb14427.jpg', 'image', '2023-01-10 16:44:01', '7437196f94b48dacec2ba8e58962a1a4');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `public_consultation_answers`
+-- מבנה טבלה עבור טבלה `public_consultation_answers`
 --
 
-DROP TABLE IF EXISTS `public_consultation_answers`;
-CREATE TABLE IF NOT EXISTS `public_consultation_answers` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `public_consultation_answers` (
+  `id` int(11) NOT NULL,
   `hash` varchar(32) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `consultation_hash` varchar(32) NOT NULL,
   `poster_hash` varchar(32) NOT NULL,
-  `answer` text NOT NULL,
+  `answer` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `is_public` tinyint(1) NOT NULL DEFAULT '1',
   `is_anonymous` tinyint(1) NOT NULL DEFAULT '0',
   `anonymous_nickname` varchar(32) DEFAULT NULL,
   `image_hash` varchar(32) DEFAULT NULL,
   `upvotes` int(11) NOT NULL DEFAULT '0',
   `downvotes` int(11) NOT NULL DEFAULT '0',
-  `rank` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1015 DEFAULT CHARSET=latin1;
+  `rank` int(11) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `public_consultation_answers`
+-- הוצאת מידע עבור טבלה `public_consultation_answers`
 --
 
 INSERT INTO `public_consultation_answers` (`id`, `hash`, `date`, `consultation_hash`, `poster_hash`, `answer`, `is_public`, `is_anonymous`, `anonymous_nickname`, `image_hash`, `upvotes`, `downvotes`, `rank`) VALUES
@@ -1318,63 +1310,58 @@ INSERT INTO `public_consultation_answers` (`id`, `hash`, `date`, `consultation_h
 (998, 'a8e71cbc5f6e75664b1954d7624295ff', '2017-06-17 06:37:51', '6f9646edf9b25fb01a42557ec76d777a', '8155bc545f84d9652f1012ef2bdfb6eb', 'Clinical Specialist', 1, 0, '0', '1', 0, 0, 0),
 (999, 'f314fbae06281d9d4ed57dc0e9263959', '2016-09-24 02:14:34', '02b482b1bb4a9e3e7e60af32c9cee7b0', '8155bc545f84d9652f1012ef2bdfb6eb', 'Internal Auditor', 0, 1, '1', '0', 0, 0, 0),
 (1000, 'a97d8450648c04481c76ed9b4a4535bd', '2017-03-25 02:42:45', 'df832682f809569e7b319116b1b65bd1', '8155bc545f84d9652f1012ef2bdfb6eb', 'Assistant Manager', 1, 1, '1', '0', 0, 0, 0),
-(1001, '79ce06c7d7b9c669c7dbd24b1888d146', '2017-07-07 11:55:12', '80f316f8625f9126f1219c815e183352', '8155bc545f84d9652f1012ef2bdfb6eb', '×”×™×™', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
-(1002, '215c397f2f1e2bfbe55b8f23d1e55b12', '2017-07-07 12:03:23', '5c0b6dbb1df0eaeda66fa81361bc6f0f', '8155bc545f84d9652f1012ef2bdfb6eb', '×ž×”?\r\n', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
-(1003, 'af30dcf4c43b8efa52795445deb5222f', '2017-07-07 12:04:12', '3959812cb7a4f95a7ecc8677292a3c51', '8155bc545f84d9652f1012ef2bdfb6eb', '×ž×”?', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
-(1004, '2b6dae931ef75da91e592932ae74d089', '2017-07-07 12:04:31', '3959812cb7a4f95a7ecc8677292a3c51', '8155bc545f84d9652f1012ef2bdfb6eb', '×”×™×™', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
-(1005, '9f42df1c2b64ae9e6e16124579e7033f', '2017-07-07 12:06:06', '41982c2053cf2f25ccb9a54ce802e8e9', '8155bc545f84d9652f1012ef2bdfb6eb', '×”××ª×¨ × ×‘× ×” ×¢\"×™ ×™×¢×§×‘ ×©×˜×¨×™×ª ×‘×©×¤×ª PHP ×‘2017 (:', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
-(1006, '5033aef7fa54b4c7518b5dcfed71ff69', '2017-07-07 12:06:31', '476d54038c6dc3a836719968e790ba9a', '8155bc545f84d9652f1012ef2bdfb6eb', '×”×™×™×™\r\n\r\n', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
-(1007, '630b7e9493154a74fa1764f90015f003', '2017-07-07 12:07:49', '474048cc6df0d31300fe9b7632f6bab7', '8155bc545f84d9652f1012ef2bdfb6eb', '×ª×©×•×‘×”', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
-(1008, 'c83654926549b468788aad149b71bd97', '2017-07-19 07:51:43', '89b04b76a0ab24f39ab0b41ede6249af', '8155bc545f84d9652f1012ef2bdfb6eb', '×ª×©×•×‘×” ×œ×“×•×’×ž×', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
-(1009, '437d7420f400b4a5035988fa4882e944', '2017-07-19 08:00:17', '801de16a9e6e1d69006e399718102a2e', '8155bc545f84d9652f1012ef2bdfb6eb', '×ª×©×•×‘×” ×œ×©××œ×”', 1, 1, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
-(1010, 'cf711c40884cd887d7aeb4f2aaf9ccc9', '2017-07-19 08:00:23', '801de16a9e6e1d69006e399718102a2e', '8155bc545f84d9652f1012ef2bdfb6eb', '×¢×•×“ ×ª×©×•×‘×”', 1, 1, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
-(1011, '0213c1780db884f59454524cb3b959f5', '2017-07-19 08:00:29', '801de16a9e6e1d69006e399718102a2e', '8155bc545f84d9652f1012ef2bdfb6eb', '×ª×©×•×‘×” ×ž×¡ 3', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
-(1012, 'dd1aca4d2c13f18a4866c6db4a8b4cb1', '2017-07-19 08:00:44', '801de16a9e6e1d69006e399718102a2e', '8155bc545f84d9652f1012ef2bdfb6eb', '×ª×©×•×‘×” ×ž×¡ 4', 1, 1, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
-(1013, 'a1997f6f108b9dddc9ecdc6dcd880a6f', '2017-11-08 16:10:27', '45f24f0d985bc54bc8279697c5d06a1e', '8155bc545f84d9652f1012ef2bdfb6eb', '×ª×©×•×‘×”\r\n', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
-(1014, '6dd6e2f15e0a3bde4b52023298dd5e1c', '2017-11-08 16:10:45', '45f24f0d985bc54bc8279697c5d06a1e', '8155bc545f84d9652f1012ef2bdfb6eb', '×ª×©×•×‘×” 2', 1, 1, '×× ×•× ×™×ž×™ ×’×‘×¨×¨×¨×¨', NULL, 0, 0, 0);
+(1001, '79ce06c7d7b9c669c7dbd24b1888d146', '2017-07-07 11:55:12', '80f316f8625f9126f1219c815e183352', '8155bc545f84d9652f1012ef2bdfb6eb', 'היי', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
+(1002, '215c397f2f1e2bfbe55b8f23d1e55b12', '2017-07-07 12:03:23', '5c0b6dbb1df0eaeda66fa81361bc6f0f', '8155bc545f84d9652f1012ef2bdfb6eb', 'מה?\r\n', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
+(1003, 'af30dcf4c43b8efa52795445deb5222f', '2017-07-07 12:04:12', '3959812cb7a4f95a7ecc8677292a3c51', '8155bc545f84d9652f1012ef2bdfb6eb', 'מה?', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
+(1004, '2b6dae931ef75da91e592932ae74d089', '2017-07-07 12:04:31', '3959812cb7a4f95a7ecc8677292a3c51', '8155bc545f84d9652f1012ef2bdfb6eb', 'היי', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
+(1005, '9f42df1c2b64ae9e6e16124579e7033f', '2017-07-07 12:06:06', '41982c2053cf2f25ccb9a54ce802e8e9', '8155bc545f84d9652f1012ef2bdfb6eb', 'האתר נבנה ע\"י יעקב שטרית בשפת PHP ב2017 (:', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
+(1006, '5033aef7fa54b4c7518b5dcfed71ff69', '2017-07-07 12:06:31', '476d54038c6dc3a836719968e790ba9a', '8155bc545f84d9652f1012ef2bdfb6eb', 'הייי\r\n\r\n', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
+(1007, '630b7e9493154a74fa1764f90015f003', '2017-07-07 12:07:49', '474048cc6df0d31300fe9b7632f6bab7', '8155bc545f84d9652f1012ef2bdfb6eb', 'תשובה', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
+(1008, 'c83654926549b468788aad149b71bd97', '2017-07-19 07:51:43', '89b04b76a0ab24f39ab0b41ede6249af', '8155bc545f84d9652f1012ef2bdfb6eb', 'תשובה לדוגמא', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
+(1009, '437d7420f400b4a5035988fa4882e944', '2017-07-19 08:00:17', '801de16a9e6e1d69006e399718102a2e', '8155bc545f84d9652f1012ef2bdfb6eb', 'תשובה לשאלה', 1, 1, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
+(1010, 'cf711c40884cd887d7aeb4f2aaf9ccc9', '2017-07-19 08:00:23', '801de16a9e6e1d69006e399718102a2e', '8155bc545f84d9652f1012ef2bdfb6eb', 'עוד תשובה', 1, 1, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
+(1011, '0213c1780db884f59454524cb3b959f5', '2017-07-19 08:00:29', '801de16a9e6e1d69006e399718102a2e', '8155bc545f84d9652f1012ef2bdfb6eb', 'תשובה מס 3', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
+(1012, 'dd1aca4d2c13f18a4866c6db4a8b4cb1', '2017-07-19 08:00:44', '801de16a9e6e1d69006e399718102a2e', '8155bc545f84d9652f1012ef2bdfb6eb', 'תשובה מס 4', 1, 1, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
+(1013, 'a1997f6f108b9dddc9ecdc6dcd880a6f', '2017-11-08 16:10:27', '45f24f0d985bc54bc8279697c5d06a1e', '8155bc545f84d9652f1012ef2bdfb6eb', 'תשובה\r\n', 1, 0, '×× ×•× ×™×ž×™', NULL, 0, 0, 0),
+(1014, '6dd6e2f15e0a3bde4b52023298dd5e1c', '2017-11-08 16:10:45', '45f24f0d985bc54bc8279697c5d06a1e', '8155bc545f84d9652f1012ef2bdfb6eb', 'תשובה 2', 1, 1, '×× ×•× ×™×ž×™ ×’×‘×¨×¨×¨×¨', NULL, 0, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tags`
+-- מבנה טבלה עבור טבלה `tags`
 --
 
-DROP TABLE IF EXISTS `tags`;
-CREATE TABLE IF NOT EXISTS `tags` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(99) NOT NULL,
-  `hash` varchar(99) NOT NULL,
-  PRIMARY KEY (`id`,`title`,`hash`),
-  UNIQUE KEY `hash` (`hash`),
-  UNIQUE KEY `title` (`title`)
-) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+CREATE TABLE `tags` (
+  `id` int(11) NOT NULL,
+  `title` varchar(99) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `hash` varchar(99) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tags`
+-- הוצאת מידע עבור טבלה `tags`
 --
 
 INSERT INTO `tags` (`id`, `title`, `hash`) VALUES
-(28, '×”×—×•×¤×© ×”×’×“×•×œ', 'b13b886afafe630af9686c1b98a9ac08'),
-(29, '×ž×¡×™×‘×•×ª', '9434f506bb1d84459e02c149c401d56e'),
-(30, '××œ×›×•×”×•×œ', 'dc514bdad087a56ad5db6e6e75049a78'),
-(31, '×¡×¤×™×™×“×¨×ž×Ÿ', 'b9751d53c5853b80571a0a3433b1e388'),
-(32, '×× ×•× ×™×ž×”', '5ac69b1fb54663025b773dd3bda717ed'),
-(33, '×¡×ª×', '7f3e9439c2f8922a2311be2bd23525d1'),
-(34, '×ž×”', '1651075427a8978e191bd4fda3fc8ee6'),
-(35, '×ª×’×™×ª', '36a917cbf52c4c74cf56fb88b6029e18'),
-(36, '×¢×•×“ ×ª×’×™×ª', '8d20a788bfae6f22f1026732de3073b9'),
-(37, '×ª×’×™×ª ×ž×¡ 3', '997c7a7359c8434605f8b84be099fe54'),
-(38, '×ª×’×™×ª ×ž×¡ 1', '6fadd914b20c55fd208fa49a47c25b28');
+(28, 'תגית לבדיקה', 'b13b886afafe630af9686c1b98a9ac08'),
+(29, 'ייעוץ זוגי', '9434f506bb1d84459e02c149c401d56e'),
+(30, 'הורות', 'dc514bdad087a56ad5db6e6e75049a78'),
+(31, 'בני נוער', 'b9751d53c5853b80571a0a3433b1e388'),
+(32, 'היכרויות', '5ac69b1fb54663025b773dd3bda717ed'),
+(33, 'טלוויזיה', '7f3e9439c2f8922a2311be2bd23525d1'),
+(34, 'כסף', '1651075427a8978e191bd4fda3fc8ee6'),
+(35, 'עבודה', '36a917cbf52c4c74cf56fb88b6029e18'),
+(36, 'אינטרנט', '8d20a788bfae6f22f1026732de3073b9'),
+(37, 'אינסטגרם', '997c7a7359c8434605f8b84be099fe54'),
+(38, 'עולם', '6fadd914b20c55fd208fa49a47c25b28');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- מבנה טבלה עבור טבלה `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
   `user_hash` varchar(32) CHARACTER SET hebrew COLLATE hebrew_bin NOT NULL,
   `fullname` varchar(99) CHARACTER SET hebrew COLLATE hebrew_bin DEFAULT NULL,
   `nickname` varchar(30) CHARACTER SET hebrew COLLATE hebrew_bin DEFAULT NULL,
@@ -1386,58 +1373,186 @@ CREATE TABLE IF NOT EXISTS `users` (
   `role` varchar(99) CHARACTER SET hebrew COLLATE hebrew_bin NOT NULL,
   `rating` int(11) NOT NULL DEFAULT '50',
   `profile_picture_hash` varchar(32) CHARACTER SET hebrew COLLATE hebrew_bin DEFAULT NULL,
-  `email_validation` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`),
-  UNIQUE KEY `user_hash` (`user_hash`),
-  UNIQUE KEY `nickname` (`nickname`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+  `email_validation` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- הוצאת מידע עבור טבלה `users`
 --
 
 INSERT INTO `users` (`id`, `user_hash`, `fullname`, `nickname`, `email`, `password_hashed`, `gender`, `birth_date`, `join_date`, `role`, `rating`, `profile_picture_hash`, `email_validation`) VALUES
-(1, '8155bc545f84d9652f1012ef2bdfb6eb', 'Yakov Shitrit', 'kinui', 'yakovd33@gmail.com', '81DC9BDB52D04DC20036DBD8313ED055', 'male', NULL, '2017-06-01', 'user', 50, NULL, 1),
-(2, '2476be0e9d21d05fd7a43d300d7fa42b', NULL, 'nickname', 'yakovd3333@gmail.com', 'b6d0bf1fe0f1ad37958ac8bb37ef255d', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
-(3, '0888697db24ac1e7a5db7c50e04430e4', NULL, NULL, 'yakovd30@walla.com', 'b6d0bf1fe0f1ad37958ac8bb37ef255d', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
-(4, 'bdf145936bb3b87ddd2d943afca3b8aa', NULL, NULL, 'yakovd3322@gmail.com', 'b6d0bf1fe0f1ad37958ac8bb37ef255d', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
-(5, '9e6265c3b0df046689b9b2c381d7cdfd', NULL, NULL, 'yakovd3eww3@gmail.com', 'b6d0bf1fe0f1ad37958ac8bb37ef255d', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
-(6, '31bcd6b2809e0d06b2185baa5a04bf4b', NULL, NULL, 'yakovd31233@gmail.com', 'b6d0bf1fe0f1ad37958ac8bb37ef255d', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
-(7, 'c5e72ef6693c857f655aeb8f8290dc4e', NULL, NULL, 'yakovd31233123@gmail.com', 'b6d0bf1fe0f1ad37958ac8bb37ef255d', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
-(8, '9f127a5ef7c6d9c950f5f7d7867abdf2', NULL, NULL, 'yakovd31233121233@gmail.com', 'b6d0bf1fe0f1ad37958ac8bb37ef255d', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
-(9, '874252fdc6de2a2c1e58deb89aea604d', NULL, NULL, 'yakovd31233121233123@gmail.com', 'b6d0bf1fe0f1ad37958ac8bb37ef255d', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
-(10, '249dfb3052a109077d99deb793fedf1e', NULL, NULL, 'yakovd3312312@gmail.com', 'b6d0bf1fe0f1ad37958ac8bb37ef255d', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
-(11, '419d1f5a6bccccd9499709e2925fdf08', NULL, NULL, 'hh@ga.com', 'e10adc3949ba59abbe56e057f20f883e', 'male', NULL, '2017-06-05', 'user', 50, NULL, 0),
-(12, 'f818aafca671760fc51cd266b91ca5a7', NULL, NULL, 'yakovd33313@gmail.com', 'b6d0bf1fe0f1ad37958ac8bb37ef255d', 'male', NULL, '2017-06-11', 'user', 50, NULL, 0),
-(13, '07de173e704a6e97e64bf524f31df588', NULL, NULL, 'mamm@shsh.com', 'b6d0bf1fe0f1ad37958ac8bb37ef255d', 'male', NULL, '2017-06-17', 'user', 50, NULL, 0),
-(14, 'c442292a25445458d4e0574a5b7a77de', '', 'yami', 'hdbfhdj@gsgsjdk.com', '25d55ad283aa400af464c76d713c07ad', 'male', NULL, '2017-06-17', 'user', 50, NULL, 0),
-(15, '5c32d47095a9831d02dce4b4c3010143', 'KKKKK', 'NAZI', 'yakovd33123@gmail.com', '25d55ad283aa400af464c76d713c07ad', 'female', NULL, '2017-06-17', 'user', 50, NULL, 1),
-(16, '81755c60aedc46b876c9eb1e5375cd3d', NULL, NULL, 'yakovd33333333@gmail.com', '25d55ad283aa400af464c76d713c07ad', 'male', NULL, '2017-06-28', 'user', 50, NULL, 0),
-(17, '73d70cc2c0f0e931acb1bf869e2f4727', NULL, NULL, 'yakovd3000@gmail.com', 'b94e7282a5b7cce46d568f9a7fbb8622', 'male', NULL, '2018-01-13', 'user', 50, NULL, 0),
-(18, '04c33d46974b25e53639d532475233bf', NULL, NULL, 'yakovd3354@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'male', NULL, '2018-08-16', 'user', 50, NULL, 0);
+(1, '8155bc545f84d9652f1012ef2bdfb6eb', 'Yakov Shitrit', 'kinui', 'yakovd33@gmail.com', '4297f44b13955235245b2497399d7a93', 'male', NULL, '2017-06-01', 'user', 50, NULL, 1),
+(2, '2476be0e9d21d05fd7a43d300d7fa42b', NULL, 'nickname', 'yakovd3333@gmail.com', '4297f44b13955235245b2497399d7a93', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
+(3, '0888697db24ac1e7a5db7c50e04430e4', NULL, NULL, 'yakovd30@walla.com', '4297f44b13955235245b2497399d7a93', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
+(4, 'bdf145936bb3b87ddd2d943afca3b8aa', NULL, NULL, 'yakovd3322@gmail.com', '4297f44b13955235245b2497399d7a93', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
+(5, '9e6265c3b0df046689b9b2c381d7cdfd', NULL, NULL, 'yakovd3eww3@gmail.com', '4297f44b13955235245b2497399d7a93', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
+(6, '31bcd6b2809e0d06b2185baa5a04bf4b', NULL, NULL, 'yakovd31233@gmail.com', '4297f44b13955235245b2497399d7a93', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
+(7, 'c5e72ef6693c857f655aeb8f8290dc4e', NULL, NULL, 'yakovd31233123@gmail.com', '4297f44b13955235245b2497399d7a93', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
+(8, '9f127a5ef7c6d9c950f5f7d7867abdf2', NULL, NULL, 'yakovd31233121233@gmail.com', '4297f44b13955235245b2497399d7a93', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
+(9, '874252fdc6de2a2c1e58deb89aea604d', NULL, NULL, 'yakovd31233121233123@gmail.com', '4297f44b13955235245b2497399d7a93', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
+(10, '249dfb3052a109077d99deb793fedf1e', NULL, NULL, 'yakovd3312312@gmail.com', '4297f44b13955235245b2497399d7a93', 'male', NULL, '2017-06-02', 'user', 50, NULL, 0),
+(11, '419d1f5a6bccccd9499709e2925fdf08', NULL, NULL, 'hh@ga.com', '4297f44b13955235245b2497399d7a93', 'male', NULL, '2017-06-05', 'user', 50, NULL, 0),
+(12, 'f818aafca671760fc51cd266b91ca5a7', NULL, NULL, 'yakovd33313@gmail.com', '4297f44b13955235245b2497399d7a93', 'male', NULL, '2017-06-11', 'user', 50, NULL, 0),
+(13, '07de173e704a6e97e64bf524f31df588', NULL, NULL, 'mamm@shsh.com', '4297f44b13955235245b2497399d7a93', 'male', NULL, '2017-06-17', 'user', 50, NULL, 0),
+(14, 'c442292a25445458d4e0574a5b7a77de', '', 'yami', 'hdbfhdj@gsgsjdk.com', '4297f44b13955235245b2497399d7a93', 'male', NULL, '2017-06-17', 'user', 50, NULL, 0),
+(15, '5c32d47095a9831d02dce4b4c3010143', 'KKKKK', 'NAZI', 'yakovd33123@gmail.com', '4297f44b13955235245b2497399d7a93', 'female', NULL, '2017-06-17', 'user', 50, NULL, 1),
+(16, '81755c60aedc46b876c9eb1e5375cd3d', NULL, NULL, 'yakovd33333333@gmail.com', '4297f44b13955235245b2497399d7a93', 'male', NULL, '2017-06-28', 'user', 50, NULL, 0),
+(17, '73d70cc2c0f0e931acb1bf869e2f4727', NULL, NULL, 'yakovd3000@gmail.com', '4297f44b13955235245b2497399d7a93', 'male', NULL, '2018-01-13', 'user', 50, NULL, 0),
+(18, '04c33d46974b25e53639d532475233bf', NULL, NULL, 'yakovd3354@gmail.com', '4297f44b13955235245b2497399d7a93', 'male', NULL, '2018-08-16', 'user', 50, NULL, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users-biography`
+-- מבנה טבלה עבור טבלה `users-biography`
 --
 
-DROP TABLE IF EXISTS `users-biography`;
-CREATE TABLE IF NOT EXISTS `users-biography` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users-biography` (
+  `id` int(11) NOT NULL,
   `user_hash` varchar(32) CHARACTER SET hebrew COLLATE hebrew_bin NOT NULL,
   `content` text CHARACTER SET hebrew COLLATE hebrew_bin NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users-biography`
+-- הוצאת מידע עבור טבלה `users-biography`
 --
 
 INSERT INTO `users-biography` (`id`, `user_hash`, `content`, `date`) VALUES
 (1, '5c32d47095a9831d02dce4b4c3010143', 'biooooo', '2017-06-19 11:52:13');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- אינדקסים לטבלה `consultations`
+--
+ALTER TABLE `consultations`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `hash` (`hash`);
+
+--
+-- אינדקסים לטבלה `consultations_tags`
+--
+ALTER TABLE `consultations_tags`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- אינדקסים לטבלה `consultations_votes`
+--
+ALTER TABLE `consultations_votes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- אינדקסים לטבלה `guests_chats`
+--
+ALTER TABLE `guests_chats`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- אינדקסים לטבלה `guests_chat_messages`
+--
+ALTER TABLE `guests_chat_messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- אינדקסים לטבלה `photos`
+--
+ALTER TABLE `photos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- אינדקסים לטבלה `public_consultation_answers`
+--
+ALTER TABLE `public_consultation_answers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- אינדקסים לטבלה `tags`
+--
+ALTER TABLE `tags`
+  ADD PRIMARY KEY (`id`,`title`,`hash`),
+  ADD UNIQUE KEY `hash` (`hash`),
+  ADD UNIQUE KEY `title` (`title`);
+
+--
+-- אינדקסים לטבלה `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `user_hash` (`user_hash`),
+  ADD UNIQUE KEY `nickname` (`nickname`);
+
+--
+-- אינדקסים לטבלה `users-biography`
+--
+ALTER TABLE `users-biography`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `consultations`
+--
+ALTER TABLE `consultations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
+
+--
+-- AUTO_INCREMENT for table `consultations_tags`
+--
+ALTER TABLE `consultations_tags`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
+--
+-- AUTO_INCREMENT for table `consultations_votes`
+--
+ALTER TABLE `consultations_votes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+
+--
+-- AUTO_INCREMENT for table `guests_chats`
+--
+ALTER TABLE `guests_chats`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+
+--
+-- AUTO_INCREMENT for table `guests_chat_messages`
+--
+ALTER TABLE `guests_chat_messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=305;
+
+--
+-- AUTO_INCREMENT for table `photos`
+--
+ALTER TABLE `photos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
+
+--
+-- AUTO_INCREMENT for table `public_consultation_answers`
+--
+ALTER TABLE `public_consultation_answers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1015;
+
+--
+-- AUTO_INCREMENT for table `tags`
+--
+ALTER TABLE `tags`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `users-biography`
+--
+ALTER TABLE `users-biography`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
