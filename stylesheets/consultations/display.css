@@ -1,0 +1,359 @@
+#consultation-details {
+    position: relative;
+}
+
+#consultation-votes {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 11px;
+    color: #444;
+}
+
+#consultation-votes .vote-item {
+    display: inline-block;
+    text-align: center;
+    padding: 7px;
+    cursor: pointer;
+}
+
+#consultation-votes .vote-item .icon {
+    font-size: 17px;
+}
+
+#cons-picture {
+    position: relative;
+    max-width: 100%;
+    height: 200px;
+    display: none;
+}
+
+#cons-picture img {
+    height: 100%;
+}
+
+#cons-title {
+    font-size: 24px;
+    color: #333;
+}
+
+#cons-desc {
+    margin-top: 10px;
+    word-break: break-word;
+    color: #333;
+}
+
+#cons-sub-details {
+    margin-top: 10px;
+}
+
+#cons-sub-details > * {
+    display: inline-block;
+}
+
+#cons-user-details {
+    padding: 2px 15px;
+    background-color: #c1c1c1;
+    border-radius: 35px;
+}
+
+#cons-user-details a {
+    color: #464646;
+}
+
+#cons-filter-ans {
+    float: left;
+}
+
+#cons-filter-ans > * {
+    display: inline-block;
+}
+
+#downvote-consultation.clicked {
+    color: tomato;
+}
+
+#upvote-consultation.clicked {
+    color: limegreen;
+}
+
+#cons-answer-options{
+    margin-top: 10px;
+    color: #555;
+}
+
+#cons-answer-options > * {
+    display: inline-block;
+}
+
+#cons-ans-sort {
+    padding: 6px 13px;
+    border: 1px solid #888;
+    border-radius: 2px;
+    font-size: 11px;
+}
+
+#cons-toggle-add-ans {
+    margin-right: 10px;
+}
+
+.toggle-ans-img-show, #toggle-cons-img-show {
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    padding: 5px 7px;
+    border-radius: 2px;
+    transition: 0.3s ease-in-out;
+    display: inline-block;
+    user-select: none;
+}
+
+.toggle-ans-img-show:hover {
+    background-color: #ebebeb;
+}
+
+.toggle-ans-img-show i {
+    font-size: 11px;
+}
+
+.ans-add-img-wrap {
+    margin-top: 3px;
+    background-color: #000;
+    border-radius: 2px;
+    overflow: hidden;
+    display: none;
+}
+
+.ans-add-img-wrap.toggled {
+    display: flex;
+}
+
+
+img.cons-ans-additional-image {
+    max-width: 100%;
+    max-height: 200px;
+    margin: auto;
+}
+
+.cons-ans-poster-info {
+    background-color: #f3f3f3;
+    padding: 2px 6px;
+    border-top: 1px solid #ececec;
+    font-size: 14px;
+}
+
+.cons-answer.anonymous .cons-ans-poster-info {
+    padding: 8px 6px;
+}
+
+.cons-ans-poster-info > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.cons-ans-poster-info .name-title {
+    padding: 3px 10px;
+    color: #fff;
+    border-radius: 35px;
+    background-color: #3a5c95;
+}
+
+.cons-ans-poster-info .name-title a {
+    color: #fff;
+}
+
+.cons-ans-poster-info .pp {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.cons-ans-poster-info .pp .cons-ans-poster-pp {
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+    background-size: 80%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.cons-answer {
+    border-radius: 3px;
+    box-shadow: 0px 1px 1px lightgrey;
+    position: relative;
+}
+
+.cons-answer:not(:first-child) {
+    margin-top: 10px;
+}
+
+.cons-answer .content-wrap {
+    background-color: #fff;
+    padding: 13px 10px;
+}
+
+#cons-answer-list {
+    margin-top: 15px;
+}
+
+div#cons-num-ans {
+    padding: 6px;
+    background-color: #ebebeb;
+    border-radius: 2px;
+}
+
+
+/* New ans */
+#cons-add-ans {
+    position: relative;
+    margin-top: 10px;
+}
+
+#cons-add-ans input[type="submit"] {
+    margin-bottom: 0px;
+}
+
+#cons-new-comment-wrap {
+    position: relative;
+    background-color: #ebebeb;
+}
+
+#cons-new-comment-input {
+    border-radius: 2px;
+    padding: 10px 5px;
+    color: #777;
+}
+
+#cons-new-comment-additionals {
+    position: absolute;
+    left: 12px;
+    bottom: 0px;
+    height: 15px;
+    top: calc(50% - 15px / 2);
+    color: #666;
+}
+
+#cons-new-comment-add-image .icon:hover {
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    color: #444;
+}
+
+#cons-new-ans-toggle-anonymously {
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+}
+
+#cons-new-ans-toggle-anonymously .icon {
+    font-size: 18px;
+    color: #929292;
+    padding: 5px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#cons-new-ans-toggle-anonymously .icon:hover, #cons-new-ans-toggle-anonymously .icon.triggered {
+    color: #555;
+}
+
+#cons-new-ans-toggle-anonymously input[name='anonymous-nickname'] {
+    display: inline-block;
+    background: #dadada;
+    border: 1px solid #bbb;
+    border-radius: 29px;
+    padding: 3px 10px;
+    vertical-align: middle;
+    color: #555555;
+    display: none;
+}
+
+#cons-new-ans-toggle-anonymously input[name="is_anonymous"] {
+    display: none;
+}
+
+.time-answered {
+    margin-right: 10px;
+}
+
+#cons-toggle-add-ans:hover, #cons-toggle-add-ans:hover > i {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Answer options */
+.cons-ans-opts {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.cons-ans-opts .toggle-opts {
+    cursor: pointer;
+}
+
+.cons-ans-opts .toggle-opts .icon {
+    font-size: 15px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    border-radius: 50%;
+    line-height: 32px;
+    text-align: center;
+}
+
+.cons-ans-opts .toggle-opts .icon:hover {
+    background-color: #ebebeb;
+}
+
+.cons-ans-opts .options-list {
+    padding: 3px 0px;
+    list-style-type: none;
+    border: 1px solid #dedede;
+    box-shadow: 1px 1px 0px #e2e2e2;
+    background-color: #fff;
+    margin-left: 10px;
+    position: absolute;
+    left: 0px;
+    z-index: 99;
+    border-radius: 2px;
+    color: #797979;
+    display: none;
+}
+
+.cons-ans-opts .options-list .option {
+    padding: 6px 17px;
+    cursor: pointer;
+    width: 110px;
+    font-size: 13px;
+}
+
+.cons-ans-opts .options-list .option > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.cons-ans-opts .options-list .option > .icon {
+    width: 40px;
+    font-size: 15px;
+}
+
+.cons-ans-opts .options-list .option:hover {
+    background-color: #efefef;
+}
+
+.cons-ans-opts .options-list .options-section:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+#consultation-tags {
+    display: block;
+    margin-top: 5px;
+}
+
+#consultation-tags a {
+    color: #444;
+}

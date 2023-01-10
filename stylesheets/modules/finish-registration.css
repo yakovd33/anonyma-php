@@ -1,0 +1,21 @@
+#registration-finish-trigger-info-changes {
+    display: inline-block;
+}
+
+#registration-finish-trigger-info-changes .trigger-info-update > * {
+    display: inline-block;
+}
+
+#registration-finish-trigger-info-changes .trigger-info-update > .icon {
+    margin-left: 5px;
+}
+
+#registration-finish-trigger-info-changes .trigger-info-update {
+    padding: 6px 9px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+#registration-finish-trigger-info-changes .trigger-info-update:hover {
+    background-color: #ebebeb;
+}

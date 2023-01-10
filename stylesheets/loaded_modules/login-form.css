@@ -1,0 +1,72 @@
+#login-form {
+    background-color: #fff;
+    border-radius: 2px;
+    width: 400px;
+    position: fixed;
+    top: 20%;
+    left: calc(50% - (400px / 2));
+}
+
+#sign-in-form-wrap {
+    position: relative;
+    min-height: 230px;
+}
+
+#login-form-website-logo {
+    height: 100px;
+    width: 100px;
+    padding: 7px;
+    background-color: #fff;
+    border-radius: 50%;
+    background-image: url(../../media/grey-anonymous.png);
+    -webkit-background-size: 70%;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 100px / 2);
+    box-shadow: 0px 1px 4px lightgrey;
+}
+
+#login-form-details {
+    margin: 72px auto auto auto;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding: 0px 25px;
+    box-sizing: border-box;
+}
+
+#login-form-details input {
+    width: 100%;
+    border: 1px solid #ebebeb;
+    padding: 8px;
+    border-radius: 2px;
+    margin-bottom: 3px;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+a#forgot-password-link {
+    color: #555;
+    text-decoration: none;
+    font-size: 12px;
+    text-align: left;
+    width: 100%;
+    margin: 5px 0px;
+}
+
+a#forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+#login-form-details input[type="submit"] {
+    background-color: #3a5c95;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 0px;
+    cursor: pointer;
+}

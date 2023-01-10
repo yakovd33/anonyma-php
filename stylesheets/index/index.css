@@ -1,0 +1,110 @@
+#hot-tags-section, #hot-new-consultations {
+    padding: 0px 3px;
+}
+
+#hot-new-consultations {
+    margin-bottom: 5px;
+}
+
+#hot-new-consultations h3, #hot-tags-section h3 {
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+#hot-new-consultations .consultations {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.hot-consultation {
+    display: inline-block;
+    width: 32%;
+    background-color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+    margin: 0px 5px;
+    height: 100%;
+}
+
+.hot-cons-picture {
+    height: 200px;
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.hot-cons-details {
+    position: relative;
+}
+
+.hot-cons-title {
+    position: absolute;
+    bottom: 109%;
+    color: #fff;
+    margin: 0px 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 6px;
+}
+
+.hot-cons-desc-show-more {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    background-color: #3a5c95;
+    border-radius: 50%;
+    top: -15px;
+    left: 15px;
+    text-align: center;
+    line-height: 34px;
+    color: #fff;
+    font-size: 13px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+.hot-cons-desc {
+    padding: 18px 8px 8px 8px;
+}
+
+@media screen and (max-width: 540px) {
+    .hot-consultation {
+        width: 100%;
+    }
+
+    .hot-cons-picture {
+        height: 100px;
+    }
+}
+
+#hot-tags-section #hot-tags-links-wrap a.hot-tag {
+    padding: 10px 15px;
+    background-color: #e3e3e3;
+    border-radius: 35px;
+    color: #4a4a4a;
+    display: inline-block;
+    transition: 0.3s ease-in-out;
+    margin-top: 4px;
+}
+
+#hot-tags-section #hot-tags-links-wrap a.hot-tag:hover {
+    background-color: #d4d4d4;
+}
+
+#hot-tags-section h3 {
+    margin: 18px 0px 5px 0;
+}
+
+/* Statistics */
+div#website-stats-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    text-align: center;
+    background-color: #ebebeb;
+    padding: 10px 15px;
+    border-radius: 2px;
+    color: #444;
+}
+
+div#website-stats-section .stat .icon {
+    margin-bottom: 5px;
+}

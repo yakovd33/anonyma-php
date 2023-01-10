@@ -1,0 +1,39 @@
+#new-consultations-list {
+    max-height: 300px; /* 60 times 5 */
+}
+
+#new-consultations-list .new-consultation-link {
+    text-decoration: none;
+    color: #444;
+    display: block;
+    height: 50px;
+    position: relative;
+    padding: 5px;
+    border-radius: 2px;
+    transition: 0.2s ease-in-out;
+    overflow: hidden;
+}
+
+#new-consultations-list .new-consultation-link:hover {
+    background-color: #ebebeb;
+}
+
+#new-consultations-list .new-consultation-link > * {
+    display: inline-block;
+}
+
+#new-consultations-list .new-consultation-link .picture {
+    height: 50px;
+    width: 50px;
+    background-color: #000;
+    border-radius: 50%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+#new-consultations-list .new-consultation-link .title {
+    vertical-align: middle;
+    height: 100%;
+    width: calc(100% - 80px);
+}
